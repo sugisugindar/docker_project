@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"  # Map container port 5000 to host port 5000
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mydatabase
+    depends_on:
+      - mongo
+
+  admin:
+    build:
+      context: ./admin
+    ports:
+      - "8080:80"  # Map container port 80 to host port 8080
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"  # Map container port 80 to host port 3000
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # Map container port 27017 to host port 27017
