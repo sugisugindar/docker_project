@@ -1,6 +1,7 @@
 step 1 : change the path to frontend folder
 
-eg : \Users\adsug\Downloads\docker_project-main\MAIN\TCE_CANTEEN\frontend>
+eg : cd C:\Users\adsug\Downloads\docker_project-main\MAIN\TCE_CANTEEN\frontend
+
 
 step 2 : docker build -t my-frontend-image .  
 
